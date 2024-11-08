@@ -13,6 +13,8 @@ builder.Services.AddHttpClient<FunctionHttpClient>(client =>
     client.BaseAddress = new("https+http://functions");
 });
 
+builder.AddAzureBlobClient("blobs");
+
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
