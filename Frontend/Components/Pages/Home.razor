@@ -1,0 +1,17 @@
+﻿@page "/"
+@inject FunctionHttpClient functionApiClient
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<h3>@functionsWelcomeMessage</h3>
+
+@code
+{
+    string functionsWelcomeMessage = string.Empty;
+    protected override async Task OnInitializedAsync()
+    {
+        functionsWelcomeMessage = await functionApiClient.GetWelcomeFromFunctions();
+    }
+}
