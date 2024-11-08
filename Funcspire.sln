@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35506.202 main
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funcspire", "Funcspire\Funcspire.csproj", "{A5E8E81D-AA12-763A-0805-A5E379E98421}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funcspire.Functions", "Funcspire\Funcspire.Functions.csproj", "{A5E8E81D-AA12-763A-0805-A5E379E98421}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funcspire.AppHost", "Funcspire.AppHost\Funcspire.AppHost.csproj", "{B8BBE472-AE78-4AAC-81B2-5DA24256063D}"
 EndProject

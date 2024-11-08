@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Frontend\Frontend.csproj" />
-    <ProjectReference Include="..\Funcspire\Funcspire.csproj" />
+    <ProjectReference Include="..\Funcspire\Funcspire.Functions.csproj" />
   </ItemGroup>
 
 </Project>
