@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspire.Azure.Storage.Blobs" Version="9.0.0-rc.1.24511.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Funcspire.ServiceDefaults\Funcspire.ServiceDefaults.csproj" />
   </ItemGroup>
 

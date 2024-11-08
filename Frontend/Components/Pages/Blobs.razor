@@ -1,0 +1,48 @@
+﻿@page "/blobs"
+@using Azure.Storage.Blobs
+@rendermode InteractiveServer
+@inject BlobServiceClient blobServiceClient
+
+<PageTitle>Blobs</PageTitle>
+
+<h1>Blobs</h1>
+
+<button class="btn btn-primary" @onclick="UploadBlob">Upload a blob</button>
+
+@if (blobs.Count > 0)
+{
+    <ul>
+        @foreach (var blob in blobs)
+        {
+            <li>@blob</li>
+        }
+    </ul>
+}
+
+@code
+{
+    List<string> blobs = new List<string>();
+
+    protected override async Task OnInitializedAsync() => await GetBlobs();
+
+    private async Task GetBlobs()
+    {
+        blobs.Clear();
+        var containerClient = blobServiceClient.GetBlobContainerClient("incoming");
+        await containerClient.CreateIfNotExistsAsync();
+        await foreach (var blobItem in containerClient.GetBlobsAsync())
+        {
+            blobs.Add(blobItem.Name);
+        }
+        StateHasChanged();
+    }
+
+    private async Task UploadBlob()
+    {
+        // upload a random string as a blob
+        var containerClient = blobServiceClient.GetBlobContainerClient("incoming");
+        var blobClient = containerClient.GetBlobClient(Guid.NewGuid().ToString());
+        blobClient.Upload(BinaryData.FromString("This is a test"));
+        await GetBlobs();
+    }
+}
